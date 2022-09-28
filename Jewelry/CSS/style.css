@@ -28,8 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 :root {
     --lightColor: #EFE3DF;
     --textColor: #2B2024;
-    --bgLink: rgb(99, 77, 46);
-    --bgLinkHover: rgb(214, 179, 93);
+    --bgLink: rgb(214, 179, 93);
+    --bgLinkHover: rgb(214, 179, 93, 0.5);
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -47,27 +47,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 74px;
+    margin-top: 140px;
 }
 .main_item {
     flex-basis: 460px;
 }
-.main_title, .link {
+.main_title, .link, .title_h2, .circle_text {
     font-family: 'IBM Plex Serif', sans-serif;  
 }
 .main_title {
     font-size: 64px;
     font-weight: 400;
+    line-height: 1.2;
     margin-top: 0;
+    margin-bottom: 38px;
 }
 .main_desc {
-    padding: 20px 0 20px 0;
+   line-height: 1.5;
+   margin-top: 0;
+   margin-bottom: 38px;
 }
 .link {
     font-size: 20px;
     background: var(--bgLink);
     color: var(--lightColor);
     padding: 16px 0;
+    border-radius: 10px;
     display: block;
     max-width: 300px;
     text-align: center;
@@ -86,7 +91,7 @@ body {
     display: block;
     height: 400px;
     width: 550px;
-    border-radius: 0 100px 0 100px;
+    border-radius: 0 200px 0 200px;
     border: solid 2px white;
     background-size: cover;
     position: absolute;
@@ -96,5 +101,60 @@ body {
 .main_img_1 {
     height: 400px;
     width: 550px;
-    border-radius: 0 100px 0 100px;
+    border-radius: 0 200px 0 200px;
+}
+.products {
+    margin-top: 150px;
+}
+.title_h2 {
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 244px 1fr;
+    grid-template-rows: 218px 218px;
+    gap: 15px 16px;
+}
+.grid_cover:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+.grid_cover:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.grid_cover:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.grid_cover:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+.grid_cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+.grid_cover img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.circle_text {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    word-spacing: 21px;
+    animation: motion normal infinite 20s linear;
+    transform-origin: 50% 50%;
+}
+@keyframes motion {
+   to {
+    transform: rotate(360deg);
+   }
 }
