@@ -1,12 +1,6 @@
 /*ШРИФТЫ*/
-
-@import "https://fonts.fontstorage.com/import/opensans.css";
-@import "https://fonts.fontstorage.com/import/ibmplexserif.css";
-/* Please do not use this import in production. You could download this font from here https://fontstorage.com/font/ibm-plex-serif?from=sublime */
-@import "https://fonts.fontstorage.com/import/ibmplexserif.css";
-/*
-    IBM Plex Serif, 100, 100 italic, 200, 200 italic, 300, 300 italic, 400, 400 italic, 500, 500 italic, 600, 600 italic, 700, 700 italic, 800, 800 italic
-*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+@import url(https://fonts.googleapis.com/css?family=IBM+Plex+Serif:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
 
 /*ОБНУЛЕНИЕ*/
 
@@ -34,8 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 :root {
     --lightColor: #EFE3DF;
     --textColor: #2B2024;
-    --bgLink: #673D3F;
-    --bgLinkHover: #B05459;
+    --bgLink: rgb(99, 77, 46);
+    --bgLinkHover: rgb(214, 179, 93);
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -43,11 +37,31 @@ body {
     color: var(--textColor);
     font-size: 22px;
 }
+.container {
+    max-width: 1250px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 74px;
+}
+.main_item {
+    flex-basis: 460px;
+}
 .main_title, .link {
     font-family: 'IBM Plex Serif', sans-serif;  
 }
 .main_title {
     font-size: 64px;
+    font-weight: 400;
+    margin-top: 0;
+}
+.main_desc {
+    padding: 20px 0 20px 0;
 }
 .link {
     font-size: 20px;
@@ -57,4 +71,30 @@ body {
     display: block;
     max-width: 300px;
     text-align: center;
+    transition: 0.2s;
+}
+.link:hover {
+    background: var(--bgLinkHover);
+}
+.main_images {
+    display: flex;
+    align-items: flex-end; 
+    position: relative;
+}
+.main_images::after {
+    content: '';
+    display: block;
+    height: 400px;
+    width: 550px;
+    border-radius: 0 100px 0 100px;
+    border: solid 2px white;
+    background-size: cover;
+    position: absolute;
+    left: 38px;
+    bottom: 35px;
+} 
+.main_img_1 {
+    height: 400px;
+    width: 550px;
+    border-radius: 0 100px 0 100px;
 }
