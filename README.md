@@ -2,5 +2,7 @@
 
 Simple adaptive landing with animation
 
-####error
-trouble with animation in safari
+#### error:
+Trouble with animation in safari
+- -webkit - don't work
+- % - don"t work
